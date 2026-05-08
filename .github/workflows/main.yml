@@ -11,7 +11,8 @@ jobs:
       
       - name: Build APK
         run: |
-          buildozer android debug
+          export FORCE_ROOT=1
+          yes y | buildozer android debug
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
